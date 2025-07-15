@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Rumour Radar AI</title>
+    <style>
+        body { font-family: Arial; background: #f0f0f0; padding: 40px; }
+        .container { background: white; padding: 20px; max-width: 600px; margin: auto; border-radius: 10px; box-shadow: 0 0 10px gray; }
+        textarea { width: 100%; height: 100px; padding: 10px; margin-top: 10px; font-size: 16px; }
+        button { padding: 10px 20px; background: #007BFF; color: white; border: none; margin-top: 10px; border-radius: 5px; }
+        h2 { color: green; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🕵️ Rumour Radar AI</h1>
+        <form method="post" action="/predict">
+            <label>Enter News Headline or Content:</label><br>
+            <textarea name="news" required></textarea><br>
+            <button type="submit">Check</button>
+        </form>
+        <br>
+        {% if prediction_text %}
+            <h2>{{ prediction_text }}</h2>
+        {% endif %}
+    </div>
+</body>
+</html>
